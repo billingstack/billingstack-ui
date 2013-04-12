@@ -1,0 +1,26 @@
+<div ng-controller="PaymentGatewayConfigurationController">
+	<div class="well">
+		<div class="row-fluid">
+			<a href="#/payment-gateways" class="btn pull-left"><i class="icon-arrow-left"></i> Back</a>
+		</div>
+	</div>
+	<form>
+		<fieldset>
+			<label>Payment Gatway Provider</label>
+			<select ng-model="merchant.language" ng-options="l.name as l.title + ' (' + l.name + ')' for l in paymentGatewayProviders" class="payment-gateway-providers" />
+		</fieldset>
+		<fieldset>
+			<legend>Configuration</legend>
+			<label>Merchant ID</label>
+			<input type="text" ng-model="paymentGatewayConfiguration.properties.merchant_id" />
+			<label>API Key</label>
+			<input type="text" ng-model="paymentGatewayConfiguration.properties.api_key" />
+			<label>API Secret</label>
+			<textarea ng-model="paymentGatewayConfiguration.properties.api_secret"></textarea>
+		</fieldset>
+		<div class="row-fluid">
+			<a href="#/payment-gateways" class="btn pull-left">Cancel</a>
+			<button class="btn btn-primary pull-right" ng-click="save()">Create</button>
+		</div>
+	</form>
+</div>

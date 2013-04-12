@@ -1,0 +1,45 @@
+<div ng-controller="UsageController">
+	<div class="well">
+		<div class="row-fluid">
+			<a href="#/subscriptions" class="btn pull-left"><i class="icon-arrow-left"></i> Back</a>
+		</div>
+	</div>
+	<form data-ng-submit="save()">
+	    <fieldset>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="provider">Provider</label>
+	          <input id="provider" type="text" data-ng-model="usage.provider" class="span12" />
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="resource">Resource</label>
+	          <input id="resource" type="text" data-ng-model="usage.resource" class="span12" />
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="product">Product</label>
+	          <input id="product" type="text" data-ng-model="usage.product_name" class="span12" />
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="volume">Volume</label>
+	          <input id="volume" type="text" data-ng-model="usage.volume" class="span12" />
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="measure">Measure</label>
+	          <input id="measure" type="text" data-ng-model="usage.measure" class="span12" />
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	          <a href="#/subscriptions">Cancel</a>
+	          <button class="btn btn-primary pull-right">Save</button>
+	      </div>
+	    </fieldset>
+	  </form>
+</div>

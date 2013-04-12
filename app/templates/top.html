@@ -1,0 +1,20 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <span class="brand">BillingStack</span>
+      <div class="nav-collapse collapse pull-right" ng-show="config.merchant">
+        <ul class="nav">
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{config.merchant.title}}<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#/settings">Settings</a></li>
+							<li><a href="#/payment-gateways">Payment Gateways</a></li>
+              <li class="divider"></li>
+              <li><a href="#/logout" data-ng-click="logout()">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

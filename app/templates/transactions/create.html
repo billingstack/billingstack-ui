@@ -1,0 +1,22 @@
+<div ng-controller="TransactionController">
+	<div class="well">
+		<div class="row-fluid">
+			<a href="#/transactions" class="btn pull-left"><i class="icon-arrow-left"></i> Back</a>
+		</div>
+	</div>
+	<form data-ng-submit="save()">
+	    <fieldset>
+	      <legend>General</legend>
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <label for="invoice">Invoices</label>
+	          <select id="invoice" data-ng-model="transaction.invoices" data-ng-options="i.id as i.id for i in invoices" class="span12" multiple="multiple"></select>
+	        </div>
+	      </div>
+	      <div class="row-fluid">
+	        <a href="#/transactions" class="btn pull-left">Cancel</a>
+					<button class="btn btn-primary pull-right">Create</button>
+	      </div>
+	    </fieldset>
+	  </form>
+</div>

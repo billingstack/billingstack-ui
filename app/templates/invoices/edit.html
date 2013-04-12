@@ -1,0 +1,54 @@
+<div ng-controller="InvoiceController">
+	<form>
+	      <fieldset>
+	        <div class="row-fluid">
+						<div class="span4">
+							<label for="number">Invoice Number</label>
+							<input id="number" type="text" data-ng-model="invoice.number" class="span12">
+						</div>
+						<div class="span4">
+								<label for="issued">Date of Issue</label>
+								<input id="issued" type="text" data-ng-model="invoice.issued"  class="span12">
+						</div>
+						<div class="span4">
+							<label for="email">Customer</label>
+              <input id="email" type="text" data-ng-model="invoice.customer_id" class="span12">
+						</div>
+					</div>
+	      </fieldset>
+	      <fieldset class="row-fluid">
+					<button class="btn" data-ng-click="addLine()">+</button>
+	        <table class="table">
+	          <thead>
+	              <tr>
+	                  <th></th>
+	                  <th>Description</th>
+	                  <th>Unit Cost ($)</th>
+	                  <th>Qty</th>
+	                  <th>Total ($)</th>
+	              </tr>
+	          </thead>
+	          <tbody>
+	              <tr data-ng-repeat="line in invoice.lines" class="invoice-line">
+	                  <td><button class="btn" data-ng-click="removeLine($index)"><i class="icon-minus"></i></button></td>
+	                  <td><input type="text" data-ng-model="line.description" class="span12"></td>
+	                  <td><input type="number" data-ng-model="line.price" class="span12"></td>
+	                  <td><input type="number" data-ng-model="line.quantity" class="span12"></td>
+	                  <td><input type="text" data-ng-model="line.subtotal" class="span12" readonly=""></td>
+	              </tr><tr class="last_row">
+	                  <td colspan="4">&nbsp;</td>
+	                  <td colspan="2">
+	                      <p class="clearfix">Subtotal: <span class="subtotal">$<span>{{invoice.subtotal}}</span></span></p>
+	                      <p>Tax: <span class="tax">$<span>{{invoice.tax}}</span></span></p>
+	                      <p><strong>Total: <span class="total">$<span>{{invoice.total}}</span></span></strong></p>
+	                  </td>
+	              </tr>
+	          </tbody>
+	        </table>
+	      </fieldset>
+	      <div class="row-fluid">
+	          <a href="#/invoices" class="pull-left">Cancel</a>
+	          <button class="btn btn-primary pull-right" ng-click="save()">Save</button>
+	      </div>
+	    </form>
+</div>

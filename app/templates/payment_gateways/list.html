@@ -1,0 +1,31 @@
+<div class="payment-gateway-configurations">
+	<div class="well">
+		<div class="row-fluid">
+			<a href="#/payment-gateways/new" class="btn pull-left"><i class="icon-plus"></i> Configuration</a>
+			<button class="btn pull-right" ng-click="refresh()"><i class="icon-refresh"></i> Refresh</button>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<table class="table table-stripped">
+			<tr>
+				<th class="fit"><br /></th>
+				<th>Title</th>
+				<th class="fit"><br /></th>
+			</th>
+			<tr ng-repeat="p in paymentGatewayConfigurations" class="payment-gateway-configuration">
+				<td><input type="checkbox" ng-model="p.id"></td>
+				<td>{{p.title}}</td>
+				<td class="btn-toolbar">
+					<div class="btn-group">
+						<button data-toggle="dropdown" class="btn btn-small dropdown-toggle"><span class="icon-cog"></span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="#/payment-gateways/{{p.id}}"><i class="icon-pencil"></i> Edit</a></li>
+							<li><a ng-click="remove()"><i class="icon-remove"></i> Delete</a></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

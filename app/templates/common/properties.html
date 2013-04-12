@@ -1,0 +1,16 @@
+<table class="table table-stripped">
+	<thead>
+		<tr>
+			<th>key</th>
+			<th>value</th>
+			<th class="fit"><button class="btn" ng-click="addProperty()">+</button></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="property in properties">
+			<td><input type="text" ng-model="property.key" class="span12"/></td>
+			<td><input type="text" ng-model="property.value" class="span12"/></td>
+			<td><button class="btn" ng-click="removeProperty($index)">-</button></td>
+		</tr>
+	</tbody>
+</table>

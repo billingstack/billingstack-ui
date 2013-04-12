@@ -1,0 +1,39 @@
+<div ng-controller="SubscriptionsController" ng-init="refresh()">
+	<div class="well">
+		<div class="row-fluid">
+			<a href="#/customers/{{params.customer_id}}/subscriptions/new" class="btn" ng-show="params.customer_id"><i class="icon-plus"></i> Subscription</a>
+			<button class="btn pull-right" ng-click="refresh()"><i class="icon-refresh"></i> Refresh</button>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<table class="table table-stripped">
+			<tr>
+				<th class="fit"><br /></th>
+				<th ng-show="layout=='merchant'">Customer</th>
+				<th>Plan</th>
+				<th>Next billing day</th>
+				<th class="fit"><br /></th>
+			</th>
+			<tr ng-repeat="s in subscriptions" class="subscription">
+				<td><input type="checkbox" ng-model="s.id"></td>
+				<td ng-show="layout=='merchant'">{{s.customer_title}}</td>
+				<td>{{s.plan_title}}</td>
+				<td>{{s.billing_day}}</td>
+				<td class="btn-toolbar">
+					<div class="btn-group">
+						<button data-toggle="dropdown" class="btn btn-small dropdown-toggle"><span class="icon-cog"></span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="#/customers/{{s.customer_id}}/subscriptions/{{s.id}}"><i class="icon-pencil"></i> Edit</a></li>
+							<li class="divider"></li>
+							<li><a href="#/subscriptions/{{s.id}}/usage">List Usage</a></li>
+							<li><a href="#/subscriptions/{{s.id}}/usage/new">Create Usage</a></li>
+							<li class="divider"></li>
+							<li><a ng-click="remove(s.id)"><i class="icon-remove"></i> Delete</a></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
