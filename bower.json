@@ -1,0 +1,16 @@
+{
+  "name": "billingstack-ui",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "devDependencies": {
+    "jquery": "~2.0.0",
+    "bootstrap": "http://twitter.github.io/bootstrap/assets/bootstrap.zip",
+    "angular": "~1.0.6",
+    "angular-resource": "~1.0.6",
+    "underscore": "~1.4.4"
+  }
+}

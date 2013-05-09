@@ -196,7 +196,7 @@ billingstack
 			scope : {
 				properties: '=bind'
 			},
-			templateUrl : 'app/templates/common/properties.html',
+			templateUrl : 'templates/common/properties.html',
 			link : function(scope, element, attrs) {
 				
 				scope.addProperty = function() {
