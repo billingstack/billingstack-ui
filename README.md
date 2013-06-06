@@ -18,18 +18,18 @@ BillingStack UI (AngularJS 100% Client Side)
     => Close and reopen your terminal to start using NVM
 
     # nvm ls-remote
-    v0.1.14 ... ...     ...
+    v0.1.14 ... ...      ...
     ...
-    ...     ... v0.10.7 ...
-    ...     ... ...     ...
+    ...     ... v0.10.10 ...
+    ...     ... ...      ...
 
-    # nvm install 0.10.7
+    # nvm install 0.10.10
     ######################################################################## 100.0%
-    Now using node v0.10.7
+    Now using node v0.10.10
 
     # nvm ls
     v0.10.7
-    current:   v0.10.7
+    current:   v0.10.10
 
     # npm install -g grunt-cli
     # npm install -g bower
