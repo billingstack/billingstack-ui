@@ -1,3 +1,9 @@
+var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
+
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -29,14 +35,42 @@ module.exports = function(grunt) {
         src: '<%= concat.dist.dest %>',
         dest: 'dist/<%= pkg.name %>.min.js'
       }
+    },
+    connect: {
+        options: {
+            port: 9000,
+            //base: 'app'
+        },
+        livereload: {
+            options: {
+                middleware: function(connect) {
+                    return [
+                        lrSnippet,
+                        mountFolder(connect, 'app')
+                    ]
+                }
+            }
+        }
+    },
+    watch: {
+        livereload: {
+            options: {
+                livereload: true
+            },
+            files: [
+                'app/*.html'
+            ]
+        }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('default', ['concat', 'uglify', 'connect', 'watch']);
 
 };
