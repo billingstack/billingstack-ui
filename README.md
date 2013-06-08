@@ -37,15 +37,15 @@ BillingStack UI (AngularJS 100% Client Side)
     # git clone http://github.com/billingstack/billingstack-ui
     # cd billingstack-ui
     # npm install
+
+Build BillingStack UI
+
     # grunt
-    Running "concat:dist" (concat) task
-    File "dist/billingstack-ui.js" created.
 
-    Running "uglify:dist" (uglify) task
-    File "dist/billingstack-ui.min.js" created.
+Development Environment
 
-    Running "connect:livereload" (connect) task
-    Started connect web server on localhost:9000.
+    # grunt dev
 
-    Running "watch" task
-    Waiting...
+Production Environment
+
+    # grunt prod
