@@ -69,6 +69,14 @@ module.exports = function (grunt) {
         usemin: {
             html: 'target/index.html'
         },
+        copy: {
+            prod: {
+                files: [
+                    {expand: true, cwd:'app', src: ['templates/*.html'], dest: 'target'},
+                    {expand: true, cwd:'app/components/bootstrap', src: ['img/*'], dest: 'target'},
+                ]
+            }
+        },
         connect: {
             dev: {
                 options: {
@@ -117,17 +125,18 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-usemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // build
-    grunt.registerTask('default', ['clean', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'htmlmin', 'usemin']);
+    grunt.registerTask('default', ['clean', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'htmlmin', 'usemin', 'copy:prod']);
 
     // dev
     grunt.registerTask('dev', ['connect:dev', 'open:dev', 'watch']);
 
     // prod
-    grunt.registerTask('prod', ['default', 'connect:prod', 'open:prod']);
+    grunt.registerTask('prod', ['default', 'open:prod', 'connect:prod']);
 
 };
