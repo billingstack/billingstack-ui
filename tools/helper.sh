@@ -38,6 +38,10 @@ function build_dist() {
 }
 
 
+NVM_SH=${NVM_SH:-$HOME/.nvm/nvm.sh}
+[ -r "$NVM_SH" ] && . $NVM_SH
+
+
 case $1 in
     install_deps)
         install_deps
