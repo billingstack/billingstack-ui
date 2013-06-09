@@ -21,7 +21,6 @@ function install_deps() {
 
 function install_ui_deps() {
     cd $PROJECT_DIR
-    npm install
     bower install
 }
 
