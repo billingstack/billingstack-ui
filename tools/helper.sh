@@ -9,10 +9,9 @@ PROJECT_DIR=$SCRIPT_DIR/..
 
 function install_deps() {
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-    source_nvm
+    . $NVM_SH
 
     nvm install $NODE_VERSION
-
     nvm use v${NODE_VERSION}
 
     npm install -g grunt-cli
@@ -20,12 +19,16 @@ function install_deps() {
 }
 
 function install_ui_deps() {
+    . $NVM_SH
+    nvm use v${NODE_VERSION}
     cd $PROJECT_DIR
     bower install
 }
 
 
 function build() {
+    . $NVM_SH
+    nvm use v${NODE_VERSION}
     cd $PROJECT_DIR
     grunt
 }
@@ -37,13 +40,6 @@ function build_dist() {
     gzip target.tar
 }
 
-
-function source_nvm() {
-    [ -r "$NVM_SH" ] && . $NVM_SH
-}
-
-
-source_nvm
 
 case $1 in
     install_deps)
