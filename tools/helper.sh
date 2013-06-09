@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODE_VERSION=${NVM_VERSION:0.10.10}
+NODE_VERSION=${NODE_VERSION:-0.10.10}
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 PROJECT_DIR=$SCRIPT_DIR/..
@@ -8,10 +8,8 @@ PROJECT_DIR=$SCRIPT_DIR/..
 
 function install_deps() {
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-    nvm install $NODE_VERSION
 
-    echo "NVM Versions"
-    nvm ls
+    nvm install $NODE_VERSION
 
     nvm use v${NODE_VERSION}
 
