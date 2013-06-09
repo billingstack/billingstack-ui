@@ -44,6 +44,8 @@ function source_nvm() {
 }
 
 
+source_nvm
+
 case $1 in
     install_deps)
         install_deps
