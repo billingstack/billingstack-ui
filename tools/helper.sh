@@ -1,6 +1,7 @@
 #!/bin/bash
 
 NODE_VERSION=${NODE_VERSION:-0.10.10}
+NVM_SH=${NVM_SH:-$HOME/.nvm/nvm.sh}
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 PROJECT_DIR=$SCRIPT_DIR/..
@@ -8,6 +9,7 @@ PROJECT_DIR=$SCRIPT_DIR/..
 
 function install_deps() {
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+    source_nvm
 
     nvm install $NODE_VERSION
 
@@ -19,6 +21,7 @@ function install_deps() {
 
 function install_ui_deps() {
     cd $PROJECT_DIR
+    npm install
     bower install
 }
 
@@ -36,8 +39,9 @@ function build_dist() {
 }
 
 
-NVM_SH=${NVM_SH:-$HOME/.nvm/nvm.sh}
-[ -r "$NVM_SH" ] && . $NVM_SH
+function source_nvm() {
+    [ -r "$NVM_SH" ] && . $NVM_SH
+}
 
 
 case $1 in
