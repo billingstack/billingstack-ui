@@ -21,7 +21,7 @@ function install_deps() {
 function install_ui_deps() {
     . $NVM_SH
     nvm use v${NODE_VERSION}
-    cd $PROJECT_DIR
+    cd "$PROJECT_DIR"
     bower install
 }
 
@@ -29,7 +29,7 @@ function install_ui_deps() {
 function build() {
     . $NVM_SH
     nvm use v${NODE_VERSION}
-    cd $PROJECT_DIR
+    cd "$PROJECT_DIR"
     grunt
 }
 
