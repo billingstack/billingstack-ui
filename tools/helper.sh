@@ -30,6 +30,7 @@ function build() {
     . $NVM_SH
     nvm use v${NODE_VERSION}
     cd "$PROJECT_DIR"
+    echo $(pwd)
     grunt
 }
 
