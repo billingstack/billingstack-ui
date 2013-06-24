@@ -22,6 +22,7 @@ function install_ui_deps() {
     . $NVM_SH
     nvm use v${NODE_VERSION}
     cd "$PROJECT_DIR"
+    npm install
     bower install
 }
 
