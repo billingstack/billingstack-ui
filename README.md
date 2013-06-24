@@ -3,6 +3,33 @@ billingstack-ui
 
 BillingStack UI (AngularJS 100% Client Side)
 
+The easy way
+------------
+
+#### Clone the repository
+
+    git clone http://github.com/billingstack/billingstack-ui
+    cd billingstack-ui
+    
+#### Install deps (nvm, node, npm, bower, grunt)
+
+    ./tools/helper.sh install_deps
+    
+#### Install JS deps (Angular, etc)
+
+    ./tools/helper.sh install_ui_deps
+    
+#### Now you can either build it using grunt or via the helper. 
+More or the less useless because it's only grunt.
+
+    ./tools/helper.sh build
+    
+More interesting, build a target.tar.gz for deployment
+
+    ./tools/helper.sh build_dist
+
+The hard way
+------------
     # curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
     ...
@@ -38,14 +65,17 @@ BillingStack UI (AngularJS 100% Client Side)
     # cd billingstack-ui
     # npm install
 
-Build BillingStack UI
+#### Build BillingStack UI
 
     # grunt
 
-Development Environment
+
+Starting a webserver using the grunt command
+--------------------------------------------
+#### Development Environment
 
     # grunt dev
 
-Production Environment
+#### Production Environment
 
     # grunt prod
