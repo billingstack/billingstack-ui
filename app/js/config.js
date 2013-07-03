@@ -1,5 +1,5 @@
 var proto = 'http'
-var host = '15.185.104.206';
+var host = 'localhost';
 var port = '9091';
 var path = '/v1'
 
